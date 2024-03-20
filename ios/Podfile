@@ -26,6 +26,9 @@ if linkage != nil
 end
 
 target 'appNative' do
+
+  project 'appNative.xcodeproj'
+
   config = use_native_modules!
 
   use_react_native!(

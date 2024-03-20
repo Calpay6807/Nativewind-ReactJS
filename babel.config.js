@@ -1,3 +1,25 @@
 module.exports = {
-  presets: ['module:@react-native/babel-preset'],
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    ['nativewind/babel'],
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        alias: {
+          '@components': './src/components',
+          '@config': './src/config',
+          '@constants': './src/constants',
+          '@hooks': './src/hooks',
+          '@i18n': './src/i18n',
+          '@navigators': './src/navigators',
+          '@pages': './src/pages',
+          '@services': './src/services',
+          '@store': './src/store',
+          '@utils': './src/utils',
+          '@types': './src/types',
+        },
+      },
+    ],
+  ],
 };

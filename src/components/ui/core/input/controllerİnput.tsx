@@ -7,21 +7,22 @@ type InputProps = {
   control: any;
   rules?: any;
 };
-export function ControllerledInput({
-  control,
-  name,
-  rules,
-  ...inputProps
-}: InputProps) {
-  const {field, fieldState} = useController({control, name, rules});
-  return (
-    <Input
-      ref={field.ref}
-      autoCapitalize="none"
-      onChange={field.onChange}
-      value={field.value}
-      {...inputProps}
-      error={fieldState.error?.message}
-    />
-  );
-}
+
+const ControllerledInput = React.forwardRef<HTMLInputElement, InputProps>(
+  ({control, name, rules, ...inputProps}, ref) => {
+    const {field, fieldState} = useController({control, name, rules});
+
+    return (
+      <Input
+        ref={ref}
+        autoCapitalize="none"
+        onChange={field.onChange}
+        value={field.value}
+        {...inputProps}
+        error={fieldState.error?.message}
+      />
+    );
+  },
+);
+
+export default ControllerledInput;

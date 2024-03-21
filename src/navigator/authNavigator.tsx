@@ -4,12 +4,10 @@ import Login from '../screens/auth/login/Login';
 import {AppScreens} from '../constant/appScreens';
 
 const Stack = createStackNavigator();
-const AuthNavigator = () => {
+export const AuthNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name={AppScreens.Login} component={Login} />
     </Stack.Navigator>
   );
 };
-
-export default AuthNavigator;

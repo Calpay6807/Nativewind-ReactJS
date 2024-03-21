@@ -12,7 +12,7 @@
       "@constants/*": ["./src/constants/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@i18n/*": ["./src/i18n/*"],
-      "@navigators/*": ["./src/navigators/*"],
+      "@navigator/*": ["./src/navigator/*"],
       "@pages/*": ["./src/pages/*"],
       "@services/*": ["./src/services/*"],
       "@store/*": ["./src/store/*"],

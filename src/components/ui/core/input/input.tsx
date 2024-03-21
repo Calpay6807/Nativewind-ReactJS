@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {TextInput, TextInputProps, useColorScheme} from 'react-native';
 import {styled} from 'nativewind';
 import {View} from '../view';
@@ -18,20 +18,46 @@ export const Input = ({
   error = '',
   ...props
 }: Props) => {
+  const [isFocused, setİsFocused] = useState(false);
   const {colorScheme} = useColorScheme();
   const isDark = colorScheme === 'dark';
+
+  const borderColor = error
+    ? 'border-danger-600'
+    : isFocused
+    ? 'border-teal-100'
+    : 'border-neutral-600';
+
+  const bgColor = isDark
+    ? 'bg-charcoal-800'
+    : error
+    ? 'bg-danger-500'
+    : 'bg-neutral-200';
+
+  const onFocus = useCallback(() => {
+    setİsFocused(true);
+  }, []);
+  const onBlur = useCallback(() => {
+    setİsFocused(false);
+  }, []);
   return (
-    <View>
+    <View className="mb-4">
       {label && (
         <Text
           variant="md"
           className={
-            error ? 'text-red-500' : isDark ? 'text-charcoal-100' : 'text-black'
+            error ? 'text-red-500' : isDark ? 'text-white' : 'text-black'
           }>
           {label}
         </Text>
       )}
-      <STextInput className="border-[1px] py-4 px-2" />
+      <STextInput
+        className={`border-[1px] py-4 px-2 w-[350px] ${borderColor} rounded-md ${bgColor}`}
+        {...props}
+        onFocus={onFocus}
+        onBlur={onBlur}
+      />
+      {error && <Text className="text-red-500">{error}</Text>}
     </View>
   );
 };

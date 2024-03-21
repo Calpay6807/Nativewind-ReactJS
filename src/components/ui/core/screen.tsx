@@ -5,7 +5,5 @@ type Props = {
 };
 
 export const Screen = ({children}: Props) => {
-  return (
-    <View className="flex-1 justify-center items-center px-6">{children}</View>
-  );
+  return <View className="flex-1 justify-center mx-auto">{children}</View>;
 };

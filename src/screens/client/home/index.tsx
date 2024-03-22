@@ -3,17 +3,18 @@ import React from 'react';
 import {getToken} from '@store/auth/utils';
 import {Button} from '@components/ui/core/button';
 import {signOut} from '@store/auth';
+import {Screen} from '@components/ui/core/screen';
 
 const Home = () => {
   const token = getToken();
   return (
-    <View>
+    <Screen>
       <Text>
         {token.access}
         {token.refreshToken}
       </Text>
-      <Button label={'Login'} variant="secondary" onPress={() => signOut()} />
-    </View>
+      <Button label={'Logout'} variant="secondary" onPress={() => signOut()} />
+    </Screen>
   );
 };
 

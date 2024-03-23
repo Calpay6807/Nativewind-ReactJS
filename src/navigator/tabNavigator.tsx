@@ -8,6 +8,7 @@ export const TabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name={AppScreens.Home} component={Home} />
+      <Tab.Screen name={AppScreens.Profile} component={Home} />
     </Tab.Navigator>
   );
 };

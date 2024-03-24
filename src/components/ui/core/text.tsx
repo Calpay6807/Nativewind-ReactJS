@@ -30,7 +30,7 @@ export const Text = ({
 }: ITextProps) => {
   return (
     <SText
-      className={`${textVariants.defaults} ${textVariants[variant]} ${className}`}
+      className={`${className} ${textVariants.defaults} ${textVariants[variant]} `}
       {...props}>
       {children}
     </SText>

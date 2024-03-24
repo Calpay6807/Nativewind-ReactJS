@@ -13,6 +13,10 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {useTranslation} from 'react-i18next';
 import i18n from '@i18n';
 import ControllerledInput from '@components/ui/core/input/controllerİnput';
+import {Image} from 'react-native';
+import {TouchableOpacity} from '@components/ui/core/touchableOpacity';
+import İcons from '@components/icons';
+import Password from '@components/password';
 
 const schema = z.object({
   email: z
@@ -51,16 +55,28 @@ const Login = () => {
   };
   return (
     <Screen>
+      <TouchableOpacity
+        className="absolute top-5 right-5 flezx-row items-center"
+        onPress={() => changeLanguage(i18n.language === 'tr' ? 'en' : 'tr')}>
+        <Image
+          width={150}
+          height={150}
+          source={require('../../../assets/language.png')}
+        />
+        <Text variant="lg">{i18n.language}</Text>
+      </TouchableOpacity>
       <Title text={t('signIn.title')} />
       <ControllerledInput control={control} name="email" label="Email" />
       <ControllerledInput control={control} name="password" label="Password" />
 
-      <Button label={'Login'} variant="primary" onPress={() => onLogin()} />
       <Button
-        label={'Dil Değiştir'}
-        variant="outline"
-        onPress={() => changeLanguage(i18n.language === 'tr' ? 'en' : 'tr')}
+        style={{marginTop: 20, marginBottom: 20}}
+        label={'Login'}
+        variant="primary"
+        onPress={() => onLogin()}
       />
+      <İcons changeLanguage={changeLanguage} />
+      <Password />
     </Screen>
   );
 };

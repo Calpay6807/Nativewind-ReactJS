@@ -42,7 +42,7 @@ export const Input = ({
   }, []);
   return (
     <View className="mb-4">
-      {label && (
+      {/* {label && (
         <Text
           variant="md"
           className={
@@ -50,12 +50,13 @@ export const Input = ({
           }>
           {label}
         </Text>
-      )}
+      )} */}
       <STextInput
-        className={`border-[1px] py-4 px-2 w-[350px] ${borderColor} rounded-md ${bgColor}`}
+        className={`border-b-[1px] py-4 px-2 w-[350px] ${borderColor} rounded-full `}
         {...props}
         onFocus={onFocus}
         onBlur={onBlur}
+        placeholder={label}
       />
       {error && <Text className="text-red-500">{error}</Text>}
     </View>

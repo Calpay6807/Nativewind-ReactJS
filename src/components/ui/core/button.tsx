@@ -31,7 +31,7 @@ export const buttonVariants: BVariant = {
     indicator: 'text-white',
   },
   outline: {
-    container: 'border border-neutral-400 rounded-full',
+    container: 'border border-neutral-400 rounded-md',
     label: 'text-neutral-600 dark:text-charcoal-100 text-white',
     indicator: 'text-white',
   },

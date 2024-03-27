@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "467067830239",
+    "project_id": "appnativ-62e69",
+    "storage_bucket": "appnativ-62e69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467067830239:android:c10093974cc85393524e6a",
+        "android_client_info": {
+          "package_name": "com.appnative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFGAbnuiXohtypnVGHN3-UuxPuoMhdhKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

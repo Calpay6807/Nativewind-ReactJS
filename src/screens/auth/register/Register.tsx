@@ -18,7 +18,6 @@ import Password from '@components/password';
 import auth from '@react-native-firebase/auth';
 import {showMessage} from 'react-native-flash-message';
 import {useNavigation} from '@react-navigation/native';
-import {AppScreens} from '../../../constant/appScreens';
 const schema = z.object({
   email: z
     .string({
@@ -32,12 +31,11 @@ const schema = z.object({
     .min(6, 'Password must be more than 6 characters'),
 });
 
-const Login = () => {
+const Register = () => {
   const {colorScheme, toggleColorScheme} = useColorScheme();
   const {signIn} = _useAuth();
   const {t} = useTranslation();
   const navigation = useNavigation();
-
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language); // Burada i18n nesnesini kullanın
   };
@@ -51,18 +49,17 @@ const Login = () => {
     resolver: zodResolver(schema),
     defaultValues: {
       email: 'HgZy0@example.com',
-      password: '123456',
+      password: '1234561',
     },
   });
 
-  const onLogin = () => {
+  const onRegister = () => {
     if (isValid) {
       const {email, password} = getValues();
       auth()
-        .createUserWithEmailAndPassword(email, password)
+        .signInWithEmailAndPassword(email, password)
         .then(() => {
           console.log('User account created & signed in!');
-
           showMessage({
             message: 'User account created & signed in!',
 
@@ -85,6 +82,7 @@ const Login = () => {
           if (error.code === 'auth/invalid-email') {
             message = 'That email address is invalid!';
           }
+
           showMessage({
             message: message,
 
@@ -98,7 +96,7 @@ const Login = () => {
   return (
     <Screen>
       <TouchableOpacity
-        className="absolute top-5 right-5 flezx-row items-center"
+        className="absolute top-5 right-5 items-center"
         onPress={() => changeLanguage(i18n.language === 'tr' ? 'en' : 'tr')}>
         <Image
           width={150}
@@ -107,21 +105,15 @@ const Login = () => {
         />
         <Text variant="lg">{i18n.language}</Text>
       </TouchableOpacity>
-      <Title text={t('signIn.title')} />
+      <Title text={t('signUp.title')} />
       <ControllerledInput control={control} name="email" label="Email" />
       <ControllerledInput control={control} name="password" label="Password" />
 
       <Button
         style={{marginTop: 20, marginBottom: 20}}
-        label={'Login'}
-        variant="primary"
-        onPress={() => onLogin()}
-      />
-      <Button
-        style={{marginTop: 20, marginBottom: 20}}
         label={'Register'}
         variant="primary"
-        onPress={() => navigation.navigate(AppScreens.Register)}
+        onPress={() => onRegister()}
       />
       <İcons changeLanguage={changeLanguage} />
       <Password />
@@ -129,4 +121,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

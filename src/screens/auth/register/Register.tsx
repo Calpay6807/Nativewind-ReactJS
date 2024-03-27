@@ -48,8 +48,8 @@ const Register = () => {
   } = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
-      email: 'HgZy0@example.com',
-      password: '1234561',
+      email: 'alpaycal1235@gmail.com',
+      password: '123456',
     },
   });
 
@@ -57,7 +57,7 @@ const Register = () => {
     if (isValid) {
       const {email, password} = getValues();
       auth()
-        .signInWithEmailAndPassword(email, password)
+        .createUserWithEmailAndPassword(email, password)
         .then(() => {
           console.log('User account created & signed in!');
           showMessage({

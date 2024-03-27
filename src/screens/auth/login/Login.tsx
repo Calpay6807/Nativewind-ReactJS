@@ -50,7 +50,7 @@ const Login = () => {
   } = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
-      email: 'HgZy0@example.com',
+      email: 'alpaycal1235@gmail.com',
       password: '123456',
     },
   });
@@ -59,7 +59,7 @@ const Login = () => {
     if (isValid) {
       const {email, password} = getValues();
       auth()
-        .createUserWithEmailAndPassword(email, password)
+        .signInWithEmailAndPassword(email, password)
         .then(() => {
           console.log('User account created & signed in!');
 

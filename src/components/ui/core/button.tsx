@@ -16,24 +16,24 @@ type BVariant = {
 export const buttonVariants: BVariant = {
   defaults: {
     container:
-      'flex-row items-center justify-center  rounded-md px-12 py-3 my-2 text-white',
-    label: 'text-[16px] font-medium text-white',
-    indicator: ' text-white',
+      'flex-row items-center justify-center  rounded-md px-12 py-3 my-2 text-white-50',
+    label: 'text-[16px] font-medium text-white-50',
+    indicator: ' text-white-50',
   },
   primary: {
     container: 'bg-blue-300 rounded-md ',
-    label: 'text-charcoal-100 text-white',
-    indicator: 'text-white',
+    label: ' text-white-50',
+    indicator: 'text-inherit',
   },
   secondary: {
-    container: 'bg-yellow-500 rounded-full',
-    label: 'text-secondary-600 text-white',
-    indicator: 'text-white',
+    container: 'bg-primary-500 rounded-full',
+    label: 'text-white-50',
+    indicator: 'text-neutreal-50',
   },
   outline: {
     container: 'border border-neutral-400 rounded-md',
-    label: 'text-neutral-600 dark:text-charcoal-100 text-white',
-    indicator: 'text-white',
+    label: 'text-neutral-600 dark:text-white-50',
+    indicator: 'text-black',
   },
 };
 

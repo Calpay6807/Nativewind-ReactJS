@@ -1246,6 +1246,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@notifee/react-native@^7.8.2":
+  version "7.8.2"
+  resolved "https://registry.npmjs.org/@notifee/react-native/-/react-native-7.8.2.tgz"
+  integrity sha512-VG4IkWJIlOKqXwa3aExC3WFCVCGCC9BA55Ivg0SMRfEs+ruvYy/zlLANcrVGiPtgkUEryXDhA8SXx9+JcO8oLA==
+
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
@@ -1392,6 +1397,11 @@
   integrity sha512-Mc/0iNltkZFLOBWODZDpsfeuwNumSpcbMQqQMIwMIyEJPtHcco9FneEiKPhPHKY+bPXrY9+V6xKDqPlxUIJ9Bg==
   dependencies:
     plist "^3.1.0"
+
+"@react-native-firebase/messaging@^19.1.1":
+  version "19.1.1"
+  resolved "https://registry.npmjs.org/@react-native-firebase/messaging/-/messaging-19.1.1.tgz"
+  integrity sha512-hCVfSUPh1wLXKSgt+1IYUJfCEe/TUatUGWmoQh3+Z4Q2lTsN9x3BvPM/8geNu0gc0IHAOn4Ohfxza/pvpuGDzQ==
 
 "@react-native/assets-registry@0.73.1":
   version "0.73.1"

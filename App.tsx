@@ -9,7 +9,7 @@ import {
   notificationListener,
   requestUserPermission,
 } from '@utils/notification';
-
+import SplashScreen from 'react-native-splash-screen';
 export default function App() {
   const {status} = _useAuth();
   React.useEffect(() => {
@@ -17,6 +17,7 @@ export default function App() {
     // android notification
     // getFCMToken();
     // notificationListener()
+    SplashScreen.hide();
   }, [status]); // Bağımlılık dizisine status eklendi
   const flashMessageRef = React.useRef();
   return (
